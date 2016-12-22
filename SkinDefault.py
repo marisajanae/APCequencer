@@ -1,7 +1,7 @@
 #Embedded file name: /Users/versonator/Jenkins/live/Binary/Core_Release_64_static/midi-remote-scripts/_APC/SkinDefault.py
 from _Framework.Skin import Skin
 from _Framework.ButtonElement import Color
-from Push.Colors import Rgb, Pulse, Blink
+from _PushLegacy.Colors import Rgb, Pulse, Blink
 GREEN = Color(1)
 GREEN_BLINK = Color(2)
 RED = Color(3)
@@ -79,7 +79,7 @@ class RgbColors:
       StepEmptyBase = Rgb.OCEAN.shade(2)
       StepEmptyScale = Rgb.DARK_GREY
       StepDisabled = Rgb.RED.shade(2)
-      Playhead = Rgb.GREEN
+      Playhead = Rgb.YELLOW
       PlayheadRecord = Rgb.RED
       QuantizationSelected = Rgb.GREEN
       QuantizationUnselected = Rgb.YELLOW

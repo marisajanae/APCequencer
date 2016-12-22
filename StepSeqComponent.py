@@ -3,8 +3,8 @@ from _Framework.Util import first
 from _Framework.ClipCreator import ClipCreator
 from _Framework.SubjectSlot import subject_slot, subject_slot_group
 from _Framework.Layer import Layer 
-from Push.StepSeqComponent import StepSeqComponent, DrumGroupFinderComponent
-from Push.SkinDefault import make_default_skin 
+from _PushLegacy.StepSeqComponent import StepSeqComponent, DrumGroupFinderComponent
+from _PushLegacy.SkinDefault import make_default_skin
 from NoteSettings import NoteEditorSettingsComponent 
 from APCDrumGroupComponent import APCDrumGroupComponent
 from APCMessenger import APCMessenger
@@ -35,12 +35,12 @@ class StepSeqComponent(StepSeqComponent, APCMessenger):
     self._note_editor.set_velocity_slider(button_slider)
 
   def _configure_playhead(self):
-    self._playhead_component._notes=tuple(chain(*starmap(range, (
+    self._playhead_component._notes = tuple(chain(*starmap(range, (
          (28, 32),
          (20, 24),
          (12, 16),
          (4, 8)))))
-    self._playhead_component._triplet_notes=tuple(chain(*starmap(range, (
+    self._playhead_component._triplet_notes = tuple(chain(*starmap(range, (
          (28, 31),
          (20, 23),
          (12, 15),

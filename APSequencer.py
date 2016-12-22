@@ -14,10 +14,10 @@ from _Framework.ButtonMatrixElement import ButtonMatrixElement
 from _Framework.SubjectSlot import subject_slot
 from _Framework.Resource import PrioritizedResource
 from _APC.APC import APC
-from Push import Colors
-from Push.PlayheadElement import PlayheadElement
-from Push.GridResolution import GridResolution
-from Push.AutoArmComponent import AutoArmComponent
+from _PushLegacy import Colors
+from _PushLegacy.PlayheadElement import PlayheadElement
+from _PushLegacy.GridResolution import GridResolution
+from _PushLegacy.AutoArmComponent import AutoArmComponent
 
 # Monkeypatch things
 import ControlElementUtils
@@ -36,6 +36,8 @@ from ButtonSliderElement import ButtonSliderElement
 class APSequencer(APC40_MkII):
   """ APC40Mk2 script with step sequencer mode """
   def __init__(self, *a, **k):
+    #import pydevd
+    #pydevd.settrace('localhost', port=4223, stdoutToServer=True, stderrToServer=True)
     self._double_press_context = DoublePressContext()
     APC40_MkII.__init__(self, *a, **k)
     with self.component_guard():
