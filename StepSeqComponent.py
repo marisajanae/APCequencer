@@ -35,6 +35,7 @@ class StepSeqComponent(StepSeqComponent, APCMessenger):
     self._note_editor.set_velocity_slider(button_slider)
 
   def _configure_playhead(self):
+    self._playhead_component._feedback_channels = [PAD_FEEDBACK_CHANNEL]
     self._playhead_component._notes = tuple(chain(*starmap(range, (
          (28, 32),
          (20, 24),
@@ -64,8 +65,8 @@ class StepSeqComponent(StepSeqComponent, APCMessenger):
     self._note_editor_matrix = matrix
     self._update_note_editor_matrix()
     if matrix:
-      for button, _ in ifilter(first, matrix.iterbuttons()):
-        button.set_channel(PAD_FEEDBACK_CHANNEL)
+        for button, _ in ifilter(first, matrix.iterbuttons()):
+            button.set_channel(PAD_FEEDBACK_CHANNEL)
 
   def set_loop_selector_matrix(self, matrix):
     self._loop_selector.set_loop_selector_matrix(matrix)

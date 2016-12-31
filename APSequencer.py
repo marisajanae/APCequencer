@@ -36,6 +36,7 @@ from ButtonSliderElement import ButtonSliderElement
 class APSequencer(APC40_MkII):
   """ APC40Mk2 script with step sequencer mode """
   def __init__(self, *a, **k):
+    # Create a Python Remote Debug configuration using localhost and port 4223 and uncomment the lines below to debug the script
     #import pydevd
     #pydevd.settrace('localhost', port=4223, stdoutToServer=True, stderrToServer=True)
     self._double_press_context = DoublePressContext()
